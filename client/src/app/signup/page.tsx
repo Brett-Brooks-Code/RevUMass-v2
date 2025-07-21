@@ -1,7 +1,7 @@
-export default function Food() {
+export default function SignUp() {
   return (
     <div>
-      helloFOod
+      Signup
     </div>
   );
 }
