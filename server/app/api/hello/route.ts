@@ -1,5 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server';
-
-export default function GET(req: NextRequest) {
-  return NextResponse.json({ message: 'Hello world!' }, { status: 200 });
+export function GET(req: Request) {
+  return Response.json({ message: 'Hello world!' }, { status: 200 });
 }
