@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-:root {
+/* Commented out until further notice */
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -17,6 +18,12 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+
+
+@theme {
+  --color-umass-red: #881c1c;
+  --color-umass-gray: #212721;
 }
 
 body {
