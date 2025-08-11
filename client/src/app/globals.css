@@ -20,11 +20,45 @@
   }
 } */
 
+@layer utilities  {
+  @keyframes gentle-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.75;
+    }
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 5s ease-in-out infinite;
+  }
+
+  .shine-text{
+    background: radial-gradient(circle at center,rgba(122, 122, 129, 0.85),transparent) -200% 50% / 200% 100% no-repeat,#f4f4f5;
+  }
+
+  .shine-text {
+    color: transparent;
+    background-clip: text !important;
+    animation: shine 5s linear infinite;
+  }
+
+  @keyframes shine {
+      0% {
+          background-position: 200% 0%;
+      }
+      100% {
+          background-position: -200% 0%;
+      }
+  }
+}
 
 @theme {
   --color-umass-red: #881c1c;
-  --color-umass-gray: #212721;
+  --color-umass-black: #212721;
   --color-neutral-gray: #a2aaad;
+  --color-umass-bright-red: #fe3b1f;
 }
 
 body {

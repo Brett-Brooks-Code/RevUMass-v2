@@ -15,7 +15,7 @@ const FoodCard = ({ imageSrc, foodType, foodName, stars, reviews } : FoodCardPro
   }
 
   return (
-    <button className="bg-orange-50 text-black w-full h-80 flex flex-col py-3 px-5 items-center rounded-md drop-shadow-lg/50" onClick={onButtonClick}>
+    <button className="bg-orange-50 text-black w-full max-w-90 h-80 flex flex-col py-3 px-5 items-center rounded-md drop-shadow-lg/50" onClick={onButtonClick}>
       <div className="text-sm">{foodType}</div>
       <div className="text-xl font-semibold">{foodName}</div>
 
