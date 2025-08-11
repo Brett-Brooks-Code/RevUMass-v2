@@ -10,15 +10,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  username        String        @id
-  password        String
-
-  reviews         Review[]      @relation("user")
-
-  @@map("users")
-}
-
 model Reviewable {
   id              Int           @id @default(autoincrement())
 
@@ -92,7 +83,6 @@ model Review {
   stars           Int
   review          String?
 
-  user            User          @relation("user", fields: [username], references: [username])
   reviewable      Reviewable    @relation("review", fields: [reviewableId], references: [id])
 
   @@map("reviews")

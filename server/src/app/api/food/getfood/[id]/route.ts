@@ -13,7 +13,12 @@ export async function GET(
     where: { id: foodId },
     include: {
       reviewable: {
-        include: { reviews: true },
+        omit: { id: true },
+        include: {
+          reviews: {
+            omit: { reviewableId: true }
+          },
+        },
       },
     },
   });
@@ -29,7 +34,7 @@ export async function GET(
     name: food.name,
     reviewableId: food.reviewableId,
     imagePath: food.imagePath,
-    avgStars: avgStars,
+    avgStars: avgStars?._avg.stars || -1,
     reviews: food.reviewable.reviews,
   };
   return NextResponse.json(ret, { status: 200 });
