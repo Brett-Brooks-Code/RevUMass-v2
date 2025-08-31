@@ -1,8 +1,11 @@
 'use client';
 import FoodCard from "./components/foodCard";
 import data from "@/app/test.json";
+import useScrollProgress from "@/hooks/scrollingProgress";
 
 export default  function Home() {
+
+  const [screensScrolled, progress] = useScrollProgress();
 
   function handleSearchClick() {
     console.log('search')
@@ -22,6 +25,9 @@ export default  function Home() {
 
   return (
     <div>
+      <div className="text-white fixed left-1/2 top-85/100 text-8xl animate-bounce z-1000" style={{ opacity: `${Math.max(0, -(screensScrolled / 0.1) + 1)}` }}>
+        ↓
+      </div>
       {/* Homepage */}
       <div className="bg-umass-black h-screen text-white">
         <div className="relative w-3/5 left-1/5 top-2/20 bottom-18/20 h-1/10 flex justify-between">
@@ -41,7 +47,7 @@ export default  function Home() {
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                     </svg>
                 </div>
-                <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Search Mockups, Logos..." required />
+                <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Search Food, Dorms, Study Spots..." required />
                 <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-red-700 hover:bg-grey-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Search</button>
             </div>
         </form>
