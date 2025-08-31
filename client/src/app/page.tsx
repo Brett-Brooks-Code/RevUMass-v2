@@ -36,9 +36,9 @@ export default  function Home() {
         </div>
         <div className="relative w-3/5 left-1/5 top-3/20 h-1/10">
           <div className="text-8xl shine-text">RevUMass</div>
-          <div className="text-umass-bright-red">(it's pronounced review-mass)</div>
+          <div className="text-umass-bright-red">(it&apos;s pronounced review-mass)</div>
         </div>
-        <div className="relative w-3/5 left-1/5 top-5/20 h-1/10 text-4xl text-neutral-gray shine-text">UMass Amherst's place to discover and share opinions regarding on-campus life.</div>
+        <div className="relative w-3/5 left-1/5 top-5/20 h-1/10 text-4xl text-neutral-gray shine-text">UMass Amherst&apos;s place to discover and share opinions regarding on-campus life.</div>
         <form className="relative w-3/5 left-1/5 top-5/20 h-1/10 text-4xl text-neutral-gray shine-text">   
             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
             <div className="relative">
@@ -78,7 +78,6 @@ export default  function Home() {
                 foodType={item.type}
                 foodName={item.name}
                 stars={item.stars}
-                reviews={item.reviews}
                 key={index}
               />
             ))}

@@ -6,10 +6,9 @@ interface FoodCardProps {
   foodType: string;
   foodName: string;
   stars: number;
-  reviews: any[];
 }
 
-const FoodCard = ({ imageSrc, foodType, foodName, stars, reviews } : FoodCardProps) => {
+const FoodCard = ({ imageSrc, foodType, foodName, stars } : FoodCardProps) => {
   function onButtonClick() {
     console.log(foodName);
   }
@@ -31,11 +30,11 @@ const FoodCard = ({ imageSrc, foodType, foodName, stars, reviews } : FoodCardPro
 
       <div className="text-xl">{stars}</div>
 
-      {reviews.map((item, index) => (
+      {/* {reviews.map((item, index) => (
         <div key={index} className="text-sm text-center">
           {item.user}: {item.comment}. {item.rating}/5 
         </div>
-      ))}
+      ))} */}
     </button>
   );
 };
