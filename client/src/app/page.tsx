@@ -1,103 +1,88 @@
-import Image from "next/image";
+'use client';
+import FoodCard from "./components/foodCard";
+import data from "@/app/test.json";
+import useScrollProgress from "@/hooks/scrollingProgress";
 
-export default function Home() {
+export default  function Home() {
+
+  const [screensScrolled, progress] = useScrollProgress();
+
+  function handleSearchClick() {
+    console.log('search')
+  }
+
+  function handleMenuClick() {
+    console.log('Menu')
+  }
+
+  function handlePfpClick() {
+    console.log('pfp')
+  }
+
+  function handleAddClick() {
+    console.log('add')
+  }
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <div className="text-white fixed left-1/2 top-85/100 text-8xl animate-bounce z-1000" style={{ opacity: `${Math.max(0, -(screensScrolled / 0.1) + 1)}` }}>
+        ↓
+      </div>
+      {/* Homepage */}
+      <div className="bg-umass-black h-screen text-white">
+        <div className="relative w-3/5 left-1/5 top-2/20 bottom-18/20 h-1/10 flex justify-between">
+          <button id="logo">LOGO</button>
+          <button id="hamburger">HAM</button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className="relative w-3/5 left-1/5 top-3/20 h-1/10">
+          <div className="text-8xl shine-text">RevUMass</div>
+          <div className="text-umass-bright-red">(it&apos;s pronounced review-mass)</div>
+        </div>
+        <div className="relative w-3/5 left-1/5 top-5/20 h-1/10 text-4xl text-neutral-gray shine-text">UMass Amherst&apos;s place to discover and share opinions regarding on-campus life.</div>
+        <form className="relative w-3/5 left-1/5 top-5/20 h-1/10 text-4xl text-neutral-gray shine-text">   
+            <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div className="relative">
+                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                    </svg>
+                </div>
+                <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-500 dark:focus:border-red-500" placeholder="Search Food, Dorms, Study Spots..." required />
+                <button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-red-700 hover:bg-grey-900 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Search</button>
+            </div>
+        </form>
+        <button className="Btn relative w-3/5 left-1/5 top-5/20 h-1/10">
+          <div className="sign"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+          <div className="text">Write a Review</div>
+        </button>
+
+
+
+      </div>
+      <div className="h-screen">
+        {/* appbar */}
+        <div className="relative bg-umass-red text-white top-1/20 left-5/100 right-5/100 w-9/10 min-w-50 h-15 rounded-full fixed drop-shadow-lg/50 flex gap-2 z-1">
+          <button className="text-white right-1/100 w-25 h-15" onClick={handleMenuClick} >ham</button>
+          <button className="text-white w-5/5 h-15" onClick={handleSearchClick}>SEARCH</button>
+          <button className="text-white w-25 h-15" onClick={handlePfpClick}>PFP</button>
+        </div>
+        {/* add button */} 
+        <button className="Btn bg-umass-red text-4xl text-white bottom-1/30 right-5/100 w-15 h-15 rounded-full fixed drop-shadow-lg/50 z-1" onClick={handleAddClick}>
+          +
+        </button>
+        {/* tile component container*/} 
+        <div className="relative top-30 left-1/10 w-8/10 min-w-45 absolute z-0 flex flex-wrap justify-center gap-4 p-3">
+            {data.map((item, index) =>(
+              <FoodCard
+                imageSrc={item.imSrc}
+                foodType={item.type}
+                foodName={item.name}
+                stars={item.stars}
+                key={index}
+              />
+            ))}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,64 @@
+[
+  {
+    "type": "Cafe",
+    "name": "Central Perk",
+    "imSrc": "/favicon.ico",
+    "stars": 4.7,
+    "reviews": [
+      {
+        "user": "Rachel",
+        "comment": "Great atmosphere and coffee!",
+        "rating": 5
+      },
+      {
+        "user": "Ross",
+        "comment": "Love the quiet vibe.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "type": "Bookstore",
+    "name": "The Reading Nook",
+    "imSrc": "/favicon.ico",
+    "stars": 4.3,
+    "reviews": [
+      {
+        "user": "Joey",
+        "comment": "So many comic books!",
+        "rating": 5
+      }
+    ]
+  },
+  {
+    "type": "Restaurant",
+    "name": "Pizza Palace",
+    "imSrc": "/favicon.ico",
+    "stars": 4.0,
+    "reviews": [
+      {
+        "user": "Monica",
+        "comment": "Delicious and authentic.",
+        "rating": 4
+      },
+      {
+        "user": "Chandler",
+        "comment": "The crust is amazing.",
+        "rating": 4
+      }
+    ]
+  },
+  {
+    "type": "Gym",
+    "name": "Fit & Fab",
+    "imSrc": "/favicon.ico",
+    "stars": 4.5,
+    "reviews": [
+      {
+        "user": "Phoebe",
+        "comment": "The yoga classes are fantastic!",
+        "rating": 5
+      }
+    ]
+  }
+]
